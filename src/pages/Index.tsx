@@ -1,10 +1,11 @@
 import { StarField } from "@/components/StarField"
-import { ChevronDown, Linkedin, Users, LineChart, Clock, Lightbulb, BotIcon as Robot } from "lucide-react"
+import { ChevronDown, Linkedin } from "lucide-react"
 import { ContactForm } from "@/components/ContactForm"
 import { ChatbotModal } from "@/components/ChatbotModal"
 import { useState, useEffect, useRef } from "react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
+import Icon from "@/components/ui/icon"
 
 export default function Index() {
   const [isHeadingVisible, setIsHeadingVisible] = useState(false)
@@ -241,13 +242,13 @@ export default function Index() {
               }}
             >
               <h1 className="text-4xl font-bold text-white md:text-6xl font-heading">
-                Nebula Ventures{" "}
-                <span role="img" aria-label="rocket">
-                  🚀
+                ВидеоМед{" "}
+                <span role="img" aria-label="eye">
+                  👁️
                 </span>
               </h1>
               <p className="mt-4 text-lg text-gray-300 md:text-xl px-4 max-w-xs mx-auto md:max-w-none">
-                Экспертиза в области ИИ и технологий
+                Сохраняем зрение детей — с заботой и профессионализмом
               </p>
               <Button
                 onClick={scrollToAbout}
@@ -255,7 +256,7 @@ export default function Index() {
                 size="sm"
                 className="mt-6 bg-transparent text-white border-white hover:bg-white hover:text-black transition-colors"
               >
-                О нас
+                Узнать больше
               </Button>
             </div>
           </div>
@@ -289,8 +290,8 @@ export default function Index() {
             <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
               <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-gray-700 flex-shrink-0">
                 <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/icon-d4g0PyeQftYkhSxiNDNMwiGNNteM3o.svg"
-                  alt="Профиль"
+                  src="https://cdn.poehali.dev/projects/e7b3ec43-14fe-430c-99ad-509a7a27c7f4/files/8a78c821-7ced-4126-9559-452fd54f5f9a.jpg"
+                  alt="Детская офтальмология"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -298,16 +299,16 @@ export default function Index() {
                 <h2 className="text-3xl font-bold font-heading">О нас</h2>
                 <div className="space-y-4 max-w-2xl">
                   <p className="text-gray-300">
-                    Мы помогаем компаниям использовать передовые технологии, чтобы радовать клиентов
-                    и оптимизировать бизнес-процессы.
+                    Мы — специализированный центр детской офтальмологии, который помогает родителям
+                    сохранить и защитить зрение их детей с раннего возраста.
                   </p>
                   <p className="text-gray-300">
-                    Стратегическое планирование, техническое лидерство или практическая поддержка разработки —
-                    мы поможем создать правильные решения для вашего бизнеса.
+                    Используем современное оборудование и доказательные методики для диагностики
+                    и лечения близорукости, астигматизма и других нарушений зрения у детей.
                   </p>
                   <p className="text-gray-300">
-                    Наша команда имеет более 10 лет опыта создания сложных технических продуктов
-                    для стартапов и крупных компаний. Свяжитесь с нами или попробуйте ИИ-ассистента.
+                    Более 15 лет мы помогаем детям видеть мир ясно. Запишитесь на консультацию
+                    или задайте вопрос нашему ИИ-ассистенту прямо сейчас.
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3 pt-4 justify-center md:justify-start">
@@ -316,18 +317,18 @@ export default function Index() {
                       onClick={scrollToContact}
                       variant="outline"
                       size="sm"
-                      className="bg-transparent text-white border-white hover:bg-white hover:text-black transition-colors w-[140px] mx-auto sm:mx-0"
+                      className="bg-transparent text-white border-white hover:bg-white hover:text-black transition-colors w-[160px] mx-auto sm:mx-0"
                     >
-                      Связаться
+                      Записаться на приём
                     </Button>
                     <Button
                       onClick={openChatbot}
                       variant="outline"
                       size="sm"
-                      className="bg-transparent text-white border-white hover:bg-white hover:text-black transition-colors w-[140px] mx-auto sm:mx-0 flex items-center justify-center"
+                      className="bg-transparent text-white border-white hover:bg-white hover:text-black transition-colors w-[160px] mx-auto sm:mx-0 flex items-center justify-center"
                     >
-                      <Robot className="mr-1 h-4 w-4" />
-                      ИИ-чат
+                      <Icon name="Bot" size={16} className="mr-1" />
+                      ИИ-консультант
                     </Button>
                   </div>
                 </div>
@@ -346,7 +347,7 @@ export default function Index() {
               isServicesTitleVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10",
             )}
           >
-            Услуги
+            Наши услуги
           </h2>
           <div
             ref={servicesContentRef}
@@ -356,46 +357,47 @@ export default function Index() {
             )}
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Fractional CPO */}
               <div className="bg-gray-800 rounded-lg p-6 transition-all duration-300 hover:bg-gray-700">
                 <div className="flex items-center mb-4">
-                  <Users className="h-7 w-7 text-white mr-4" aria-hidden="true" />
-                  <h3 className="text-xl font-semibold font-heading">CPO / CTO на аутсорсе</h3>
+                  <Icon name="ScanEye" size={28} className="text-white mr-4" />
+                  <h3 className="text-xl font-semibold font-heading">Диагностика зрения</h3>
                 </div>
                 <p className="text-gray-300">
-                  Продуктовое лидерство, выстраивание процессов, развитие команды, технологическая стратегия.
+                  Комплексная проверка зрения у детей с рождения. Раннее выявление близорукости,
+                  дальнозоркости, астигматизма и амблиопии.
                 </p>
               </div>
 
-              {/* Product Consulting */}
               <div className="bg-gray-800 rounded-lg p-6 transition-all duration-300 hover:bg-gray-700">
                 <div className="flex items-center mb-4">
-                  <LineChart className="h-7 w-7 text-white mr-4" aria-hidden="true" />
-                  <h3 className="text-xl font-semibold font-heading">Продуктовый консалтинг</h3>
+                  <Icon name="ShieldCheck" size={28} className="text-white mr-4" />
+                  <h3 className="text-xl font-semibold font-heading">Профилактика и лечение</h3>
                 </div>
                 <p className="text-gray-300">
-                  Разработка роадмапа, поиск и валидация product-market fit, оценка кандидатов.
+                  Подбор очков и контактных линз, аппаратное лечение, контроль прогрессирования
+                  миопии — всё для здоровья глаз вашего ребёнка.
                 </p>
               </div>
 
-              {/* Interim Leadership */}
               <div className="bg-gray-800 rounded-lg p-6 transition-all duration-300 hover:bg-gray-700">
                 <div className="flex items-center mb-4">
-                  <Clock className="h-7 w-7 text-white mr-4" aria-hidden="true" />
-                  <h3 className="text-xl font-semibold font-heading">Временное руководство</h3>
-                </div>
-                <p className="text-gray-300">Временный CPO или VP of Product для компаний в период трансформации.</p>
-              </div>
-
-              {/* Workshops & Advisory */}
-              <div className="bg-gray-800 rounded-lg p-6 transition-all duration-300 hover:bg-gray-700">
-                <div className="flex items-center mb-4">
-                  <Lightbulb className="h-7 w-7 text-white mr-4" aria-hidden="true" />
-                  <h3 className="text-xl font-semibold font-heading">Разработка продуктов</h3>
+                  <Icon name="GraduationCap" size={28} className="text-white mr-4" />
+                  <h3 className="text-xl font-semibold font-heading">Школьные программы</h3>
                 </div>
                 <p className="text-gray-300">
-                  Быстрое прототипирование и запуск внутренних и внешних приложений и сайтов
-                  с использованием современных инструментов.
+                  Специальные программы для школьников: профилактика усталости глаз, правильная
+                  гигиена зрения при работе с экранами и книгами.
+                </p>
+              </div>
+
+              <div className="bg-gray-800 rounded-lg p-6 transition-all duration-300 hover:bg-gray-700">
+                <div className="flex items-center mb-4">
+                  <Icon name="HeartHandshake" size={28} className="text-white mr-4" />
+                  <h3 className="text-xl font-semibold font-heading">Консультации для родителей</h3>
+                </div>
+                <p className="text-gray-300">
+                  Объясняем, как организовать освещение дома, ограничить вредное экранное время
+                  и выработать полезные привычки для зрения ребёнка.
                 </p>
               </div>
             </div>
@@ -408,12 +410,15 @@ export default function Index() {
           <h2
             ref={headingRef}
             className={cn(
-              "mb-12 text-center text-3xl font-bold font-heading transition-all duration-1000 ease-out",
+              "mb-4 text-center text-3xl font-bold font-heading transition-all duration-1000 ease-out",
               isHeadingVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10",
             )}
           >
-            Давайте создавать
+            Запишитесь на приём
           </h2>
+          <p className="text-center text-gray-500 mb-12 text-lg">
+            Оставьте заявку — мы перезвоним и подберём удобное время для вашего ребёнка
+          </p>
           <ContactForm />
         </div>
       </section>
